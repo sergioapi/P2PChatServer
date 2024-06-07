@@ -1,47 +1,21 @@
+# P2P Messaging System Server using Java RMI
 
-# Sistema de Mensajería Instantánea Java RMI
+This project is part of the Distributed Computing course and involves developing the server-side application of a P2P messaging system using Java RMI. The server application is responsible for managing user registrations, handling client connections, and maintaining the overall communication infrastructure of the system.
 
-Este repositorio contiene el servidor para un sistema de mensajería instantánea distribuido implementado utilizando Java RMI. El servidor gestiona las conexiones de múltiples clientes y permite la comunicación directa entre ellos, sin necesidad de pasar los mensajes a través del servidor.
+## Features
 
-## Características
+- **Client Connections**: Accepts connections from multiple clients, notifies other clients of new connections, and informs the newly connected client of online users.
+- **User Notifications**: Informs all clients when a user connects or disconnects.
+- **Direct Messaging**: Clients send and receive messages directly without routing through the server.
+- **Friend Groups**: Manages groups of friends, allowing users to send and receive friend requests and notifications only within their friend group.
+- **Persistent Storage**: Uses a database to store user information, friend groups, and pending friend requests.
 
-- **Conexión de múltiples clientes**: El servidor puede manejar múltiples clientes conectados simultáneamente.
-- **Notificaciones de conexión y desconexión**: Cada vez que un cliente se conecta o desconecta, el servidor notifica a todos los clientes activos.
-- **Comunicación directa entre clientes**: Los mensajes se envían directamente de cliente a cliente.
-- **Gestión opcional de grupos de amistad**: Los clientes pueden formar grupos de amigos y gestionar solicitudes de amistad.
-- **Registro y autenticación de usuarios**: Los usuarios pueden registrarse e iniciar sesión utilizando un nombre de usuario y contraseña.
+## Functionality
 
-## Estructura del proyecto
+- **Notify Clients of New Connections**: When a new client connects, the server notifies all connected clients and provides the new client with a list of currently online users.
+- **Notify Clients of Disconnections**: When a client disconnects, the server notifies all connected clients of the disconnection.
+- **Friend Requests**: Allows users to send friend requests, even if the recipient is offline. Pending requests are stored on the server and processed when the recipient comes online.
+- **Group Management**: Users can manage their friend groups, and notifications are sent only to users within the same group.
 
-El proyecto está dividido en varias partes principales:
-
-- `Server.java`: Clase principal del servidor que acepta y maneja conexiones de clientes.
-- `Client.java`: Clase cliente que se conecta al servidor y realiza comunicaciones directas con otros clientes.
-
-## Configuración y ejecución
-
-### Requisitos previos
-
-Es necesario tener instalado Java y configurado el entorno para usar RMI.
-
-### Configuración del servidor
-
-1. Clonar el repositorio:
-
-`git clone https://github.com/soocratess/P2PChatServer.git`
-
-
-2. Compilar los archivos `.java`
-
-3. Ejecutar el servidor
-
-
-### Conexión de clientes
-
-Conectar un cliente al servidor, puedes descargar mi versión del siguiente modo:
-`git clone https://github.com/soocratess/P2PChatApp`
-
-
-## Contribuir
-
-Para contribuir a este proyecto, por favor, envíe un pull request o abra un issue para discutir los cambios propuestos.
+## Credits
+This project was developed as part of the Distributed Computing course by Sócrates Agudo Torrado and Sergio Álvarez Piñón
